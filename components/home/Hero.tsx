@@ -21,14 +21,26 @@ const heroInfo = [
 
 function Hero() {
   return (
-    <div className="relative mt-20">
-      {/* <div className="absolute inset-0 -z-10 h-full w-full bg-slate-200 ">
-        <Image
-          className="top-0 -right-[40%] overflow-hidden bg-clip-content"
-          src={front}
-          alt="front"
-        />
-      </div> */}
+    <div className="relative overflow-hidden py-20">
+      <Image
+        className="absolute bottom-0 -right-[10%] overflow-hidden bg-clip-content"
+        src={front}
+        alt="front"
+      />
+
+      <div
+        style={{
+          background: `rgba(64, 165, 221, 0.3)`,
+          filter: `blur(100px)`,
+        }}
+        className="absolute inset-y-0 left-0 h-[487px] w-[487px]"
+      ></div>
+
+      <div
+        style={{ background: `rgba(64, 165, 221, 0.3)`, filter: `blur(100px)` }}
+        className="absolute inset-y-0 right-0 h-[368px] w-[368px]"
+      ></div>
+
       <Layout>
         <div className="w-6/12">
           <h1 className="text-17xl font-bold text-Primary-100">
