@@ -5,6 +5,7 @@ import { OurPropertySection } from "./OurPropertySection";
 import WhoWeAreSection from "./WhoWeAreSection";
 import WhyChooseUsSection from "./WhyChooseUsSection";
 import ContactSection from "./ContactSection";
+import Footer from "@/components/Footer";
 
 function Section() {
   return (
@@ -28,6 +29,7 @@ function Section() {
           <ContactSection />
         </div>
       </Layout>
+      <Footer />
     </>
   );
 }
