@@ -8,7 +8,7 @@ function Navbar() {
           future living
         </div>
         <div className="flex items-center">
-          <ul className="flex gap-9 text-5xl text-Black-40">
+          <ul className="flex gap-9 text-5xl text-Primary-100">
             <li>Home</li>
             <li>About</li>
             <li>Contact</li>
