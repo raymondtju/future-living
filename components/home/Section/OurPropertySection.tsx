@@ -41,7 +41,7 @@ export function OurPropertySection() {
         Our Property
       </h2>
       <div className="mt-[60px]">
-        <div className="grid grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
           {PropertyData.map((data, index) => (
             <div
               className="rounded-14xl bg-White-20"

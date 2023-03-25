@@ -10,7 +10,7 @@ function ContactSection() {
       <h2 className="text-center text-14xl font-semibold text-Secondary-100">
         Contact Us
       </h2>
-      <div className="mt-[60px] flex flex-row gap-4">
+      <div className="mt-[60px] flex flex-row flex-wrap gap-4">
         <div className="flex flex-grow flex-col gap-10">
           <div className="rounded-11xl border-[1px] border-Primary-80 px-8 py-6">
             <div className="flex flex-row text-Primary-80">
