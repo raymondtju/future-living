@@ -5,7 +5,7 @@ import { Facebook, Instagram, WaveLine, Youtube } from "../Icons";
 function Footer() {
   return (
     <>
-      <footer className="relative mt-[180px] bg-no-repeat pt-[120px] pb-10">
+      <footer className="relative mt-[100px] bg-no-repeat pt-[60px] pb-10 md:mt-[180px] md:pt-[120px]">
         <WaveLine className="absolute bottom-0 -z-[1] w-full overflow-hidden fill-none stroke-[#348D9F] object-cover" />
         <div
           className="absolute inset-0"
@@ -23,44 +23,44 @@ function Footer() {
           }}
         ></div>
         <Layout>
-          <div className="mt-20">
+          <div className="mt-0 md:mt-20">
             <div className="flex flex-wrap">
               <div>
-                <h2 className="text-12xl font-bold uppercase text-White-20">
+                <h4 className="text-5xl font-bold uppercase text-White-20 md:text-12xl">
                   future living
-                </h2>
+                </h4>
                 <div className="flex gap-4 pt-4">
                   <Facebook className="h-8 w-8 text-White-20" />
                   <Instagram className="h-8 w-8 text-White-20" />
                   <Youtube className="h-8 w-8 text-White-20" />
                 </div>
               </div>
-              <div className="flex flex-row flex-wrap gap-16 pl-0 lg:pl-[120px]">
+              <div className="flex flex-row flex-wrap gap-16 pl-0 pt-[60px] lg:pl-[120px] lg:pt-0">
                 <div className="flex flex-col">
-                  <h3 className="mb-7 text-5xl font-semibold text-White-20">
+                  <h3 className="mb-7 text-xs font-semibold text-White-20 md:text-5xl">
                     Navigation
                   </h3>
-                  <ul className="flex flex-grow flex-col space-y-6 text-2xl text-White-20">
+                  <ul className="flex flex-grow flex-col gap-y-5 text-[12px] text-White-20 md:gap-y-6 md:text-2xl">
                     <li>Home</li>
                     <li>About Us</li>
                     <li>Contact Us</li>
                   </ul>
                 </div>
                 <div className="flex flex-col">
-                  <h3 className="mb-7 text-5xl font-semibold text-White-20">
+                  <h3 className="mb-7 text-xs font-semibold text-White-20 md:text-5xl">
                     Contact Us
                   </h3>
-                  <ul className="flex flex-col space-y-6 text-2xl text-White-20">
+                  <ul className="flex flex-col gap-y-5 text-[12px] text-White-20 md:gap-y-6 md:text-2xl">
                     <li>service@future.com</li>
                     <li>+629802130323</li>
                     <li>Jl.Pahlawan No 18</li>
                   </ul>
                 </div>
                 <div className="flex flex-col">
-                  <h3 className="mb-7 text-5xl font-semibold text-White-20">
+                  <h3 className="mb-7 text-xs font-semibold text-White-20 md:text-5xl">
                     Privacy & Policy
                   </h3>
-                  <ul className="flex flex-col space-y-6 text-2xl text-White-20">
+                  <ul className="flex flex-col gap-y-5 text-[12px] text-White-20 md:gap-y-6 md:text-2xl">
                     <li>Privacy & Policy</li>
                   </ul>
                 </div>
