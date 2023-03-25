@@ -6,13 +6,13 @@ import Image from "next/image";
 function WhoWeAreSection() {
   return (
     <>
-      <div className="grid grid-cols-2 items-center gap-10">
+      <div className="grid grid-cols-1 items-center gap-10 md:grid-cols-2">
         <Image src={pic} alt="pic" />
         <div className="text-center">
-          <h2 className="text-14xl font-semibold text-Secondary-100">
+          <h2 className="section-title font-semibold text-Secondary-100">
             Who we are
           </h2>
-          <p className="mt-8 text-justify text-5xl text-Black-100">
+          <p className="mt-5 text-center text-xs text-Black-100 md:mt-8 md:text-justify md:text-5xl">
             Future Living is a real estate developer based in Jakarta and has
             been trusted for more than 10 years. Future Living presents an
             exclusive, elegant, and luxurious housing that is comfortable and
