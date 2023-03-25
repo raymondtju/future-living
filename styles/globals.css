@@ -1,3 +1,19 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  p {
+    line-height: 120%;
+  }
+}
+
+@layer components {
+  .section-title {
+    @apply text-6xl md:text-14xl;
+  }
+}
