@@ -24,7 +24,7 @@ function Footer() {
         ></div>
         <Layout>
           <div className="mt-20">
-            <div className="flex">
+            <div className="flex flex-wrap">
               <div>
                 <h2 className="text-12xl font-bold uppercase text-White-20">
                   future living
@@ -35,7 +35,7 @@ function Footer() {
                   <Youtube className="h-8 w-8 text-White-20" />
                 </div>
               </div>
-              <div className="flex flex-row gap-16 pl-[120px]">
+              <div className="flex flex-row flex-wrap gap-16 pl-0 lg:pl-[120px]">
                 <div className="flex flex-col">
                   <h3 className="mb-7 text-5xl font-semibold text-White-20">
                     Navigation
