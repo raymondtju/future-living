@@ -37,45 +37,47 @@ const PropertyData = [
 export function OurPropertySection() {
   return (
     <>
-      <h2 className="text-center text-14xl font-semibold text-Secondary-100">
+      <h2 className="section-title text-center font-semibold text-Secondary-100">
         Our Property
       </h2>
-      <div className="mt-[60px]">
+      <div className="mt-10 flex justify-center md:mt-[60px]">
         <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
           {PropertyData.map((data, index) => (
             <div
-              className="rounded-14xl bg-White-20"
+              className="overflow-hidden rounded-14xl bg-White-20"
               key={index}
               style={{
                 boxShadow: "1px 1px 12px 0px rgba(80,52,228,0.12)",
               }}
             >
-              <div className="w-[389px] overflow-hidden rounded-t-14xl">
+              <div className="max-w-[389px] overflow-hidden rounded-t-14xl">
                 <img
                   src={data.image}
                   alt={data.title}
-                  className="h-[255px] w-full object-cover"
+                  className="h-[193px] w-full object-cover md:h-[255px]"
                 />
               </div>
               <div className="flex flex-col p-5">
-                <span className="text-black-100 text-7xl font-medium">
+                <p className="text-black-100 text-lg font-medium md:text-7xl">
                   {data.title}
-                </span>
-                <span className="pt-2 text-2xl text-Black-60">{data.type}</span>
-                <span className="pt-4 text-5xl font-semibold text-Primary-100">
+                </p>
+                <p className="pt-2 text-[12px] text-Black-60 md:text-2xl">
+                  {data.type}
+                </p>
+                <p className="pt-3 text-xs font-semibold text-Primary-100 md:pt-4 md:text-5xl">
                   {data.price}
-                </span>
+                </p>
                 <div className="mt-6 flex items-center border-t-[1px] border-Black-20 pt-5">
-                  <span className="flex gap-1 pr-5 text-Secondary-80">
-                    <Room className="w-5" />
+                  <span className="flex gap-1 pr-4 text-[10px] text-Secondary-80 md:pr-5 md:text-base">
+                    <Room className="w-4 md:w-5" />
                     {data.room}
                   </span>
 
-                  <span className="border-Black-[1px]0 flex gap-1 border-l-[1px] border-Black-20 px-5 text-Secondary-80">
-                    <Floor className="w-5" />
+                  <span className="border-Black-[1px] flex gap-1 border-l-[1px] border-Black-20 px-4 text-[10px] text-Secondary-80 md:px-5 md:text-base">
+                    <Floor className="w-4 md:w-5" />
                     {data.floor}
                   </span>
-                  <span className="flex gap-1 border-l-[1px] border-Black-20 px-5 text-Secondary-80">
+                  <span className="flex gap-1 border-l-[1px] border-Black-20 pl-4 text-[10px] text-Secondary-80 md:pl-5 md:text-base">
                     <span>
                       LB: {data.lb} M<sup>2</sup>
                     </span>

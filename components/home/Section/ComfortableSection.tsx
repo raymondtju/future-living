@@ -1,5 +1,4 @@
-import Image from "next/image";
-
+/* eslint-disable @next/next/no-img-element */
 const ComfortableData = [
   {
     title: "Convenience Store",
@@ -23,26 +22,27 @@ const ComfortableData = [
 export function ComfortableSection() {
   return (
     <>
-      <h2 className="text-center text-14xl font-semibold text-Secondary-100">
+      <h2 className="font-semibold text-center section-title text-Secondary-100">
         Comfortable with simplicity
       </h2>
-      <div className="mt-[60px]">
-        <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+      <div className="mt-10 flex justify-center md:mt-[60px]">
+        <div className="grid items-start grid-cols-1 gap-7 md:grid-cols-2 md:gap-4 lg:grid-cols-3">
           {ComfortableData.map((data, index) => (
-            <div className="flex flex-col text-center" key={index}>
-              <Image
+            <div
+              className="flex w-full max-w-[389px] flex-col justify-center text-center"
+              key={index}
+            >
+              <img
                 src={data.image}
                 alt={data.title}
-                className="rounded-14xl"
-                width="389"
-                height="266"
+                className="flex object-cover w-auto mx-auto rounded-14xl"
               />
-              <span className="text-black-100 pt-5 text-7xl font-medium">
+              <p className="pt-3 text-lg font-medium text-black-100 md:pt-5 md:text-7xl">
                 {data.title}
-              </span>
-              <span className="pt-2 text-2xl text-Black-60">
+              </p>
+              <p className="pt-2 text-[12px] text-Black-60 md:text-2xl">
                 {data.subtitle}
-              </span>
+              </p>
             </div>
           ))}
         </div>
