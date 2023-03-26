@@ -21,51 +21,71 @@ const heroInfo = [
 
 function Hero() {
   return (
-    <div className="relative overflow-hidden py-20">
-      <Image
-        className="absolute bottom-0 -right-[10%] overflow-hidden bg-clip-content"
-        src={front}
-        alt="front"
-      />
+    <>
+      <div className="relative pt-20 overflow-hidden md:pt-20 md:pb-20">
+        <div
+          style={{
+            background: `rgba(64, 165, 221, 0.3)`,
+            filter: `blur(100px)`,
+          }}
+          className="absolute inset-y-0 left-0 h-[487px] w-[487px]"
+        ></div>
 
-      <div
-        style={{
-          background: `rgba(64, 165, 221, 0.3)`,
-          filter: `blur(100px)`,
-        }}
-        className="absolute inset-y-0 left-0 h-[487px] w-[487px]"
-      ></div>
+        <div
+          style={{
+            background: `rgba(64, 165, 221, 0.3)`,
+            filter: `blur(100px)`,
+          }}
+          className="absolute inset-y-0 right-0 h-[368px] w-[368px]"
+        ></div>
 
-      <div
-        style={{ background: `rgba(64, 165, 221, 0.3)`, filter: `blur(100px)` }}
-        className="absolute inset-y-0 right-0 h-[368px] w-[368px]"
-      ></div>
-
-      <Layout>
-        <div className="w-6/12">
-          <h1 className="text-17xl font-bold text-Primary-100">
-            Future Urban Living Expert
-          </h1>
-          <h2 className="mt-4 text-12xl font-semibold text-Primary-100">
-            The most comfortable home for the future life
-          </h2>
-          <div className="mt-12">
-            <div className="flex gap-3">
-              {heroInfo.map((info, index) => (
-                <div className="flex flex-col p-3" key={index}>
-                  <span className="mx-auto text-10xl font-semibold text-Secondary-100">
-                    {info.title}
-                  </span>
-                  <span className="mx-auto text-2xl text-Secondary-80">
-                    {info.subtitle}
-                  </span>
-                </div>
-              ))}
+        <Layout>
+          <div className="w-auto md:w-6/12">
+            <h1 className="font-bold text-center text-11xl text-Primary-100 md:text-left md:text-17xl">
+              Future Urban Living Expert
+            </h1>
+            <h2 className="mt-4 text-5xl font-semibold text-center text-Primary-100 md:text-left md:text-12xl">
+              The most comfortable home for the future life
+            </h2>
+            <div className="hidden mt-12 md:flex">
+              <div className="flex gap-3">
+                {heroInfo.map((info, index) => (
+                  <div className="flex flex-col p-3" key={index}>
+                    <span className="mx-auto text-3xl font-semibold text-Secondary-100 md:text-10xl">
+                      {info.title}
+                    </span>
+                    <span className="mx-auto text-[12px] text-Secondary-80 md:text-2xl">
+                      {info.subtitle}
+                    </span>
+                  </div>
+                ))}
+              </div>
             </div>
+          </div>
+        </Layout>
+        <Image
+          className="bottom-0 -right-[10%] mt-8 flex w-full max-w-screen-md justify-center overflow-hidden bg-clip-content md:absolute md:mt-0"
+          src={front}
+          alt="front"
+        />
+      </div>
+      <Layout>
+        <div className="flex mt-8 md:hidden">
+          <div className="flex gap-4">
+            {heroInfo.map((info, index) => (
+              <div className="flex flex-col p-1 text-center" key={index}>
+                <span className="mx-auto text-3xl font-semibold text-Secondary-100 md:text-10xl">
+                  {info.title}
+                </span>
+                <span className="mx-auto text-[12px] text-Secondary-80 md:text-2xl">
+                  {info.subtitle}
+                </span>
+              </div>
+            ))}
           </div>
         </div>
       </Layout>
-    </div>
+    </>
   );
 }
 
