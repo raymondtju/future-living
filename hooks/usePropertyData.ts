@@ -11,7 +11,7 @@ const usePropertyDataStore = create<IPropertyDataStore>((set) => ({
   propertyData: [],
   propertyDetail: null,
   fetchPropertyData: async (id) => {
-    const res = await fetch("http://localhost:3000/api/detail", {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API}/api/detail`, {
       method: "GET",
     });
     const data = await res.json();
@@ -24,7 +24,7 @@ const usePropertyDataStore = create<IPropertyDataStore>((set) => ({
     }
   },
   fetchPropertyDetail: async (id) => {
-    await fetch(`http://localhost:3000/api/detail/?id=${id}`, {
+    await fetch(`${process.env.NEXT_PUBLIC_API}/api/detail/?id=${id}`, {
       method: "GET",
     })
       .then((response) => response.json())
