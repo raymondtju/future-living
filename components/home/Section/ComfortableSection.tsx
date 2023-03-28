@@ -1,3 +1,6 @@
+import SectionBody from "@/components/SectionBody";
+import SectionTitle from "@/components/SectionTitle";
+
 /* eslint-disable @next/next/no-img-element */
 const ComfortableData = [
   {
@@ -22,11 +25,9 @@ const ComfortableData = [
 export function ComfortableSection() {
   return (
     <>
-      <h2 className="font-semibold text-center section-title text-Secondary-100">
-        Comfortable with simplicity
-      </h2>
-      <div className="mt-10 flex justify-center md:mt-[60px]">
-        <div className="grid items-start grid-cols-1 gap-7 md:grid-cols-2 md:gap-4 lg:grid-cols-3">
+      <SectionTitle>Comfortable with simplicity</SectionTitle>
+      <SectionBody>
+        <div className="grid grid-cols-1 items-start gap-7 md:grid-cols-2 md:gap-4 lg:grid-cols-3">
           {ComfortableData.map((data, index) => (
             <div
               className="flex w-full max-w-[389px] flex-col justify-center text-center"
@@ -35,9 +36,9 @@ export function ComfortableSection() {
               <img
                 src={data.image}
                 alt={data.title}
-                className="flex object-cover w-auto mx-auto rounded-14xl"
+                className="mx-auto flex w-auto rounded-14xl object-cover"
               />
-              <p className="pt-3 text-lg font-medium text-black-100 md:pt-5 md:text-7xl">
+              <p className="text-black-100 pt-3 text-lg font-medium md:pt-5 md:text-7xl">
                 {data.title}
               </p>
               <p className="pt-2 text-[12px] text-Black-60 md:text-2xl">
@@ -46,7 +47,7 @@ export function ComfortableSection() {
             </div>
           ))}
         </div>
-      </div>
+      </SectionBody>
     </>
   );
 }
