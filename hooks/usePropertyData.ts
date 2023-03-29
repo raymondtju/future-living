@@ -7,11 +7,18 @@ interface IPropertyDataStore {
   fetchPropertyDetail: (id: string) => void;
 }
 
+let url: string;
+if (process.env.NODE_ENV == "development") {
+  url = "http://localhost:3000";
+} else {
+  url = process.env.NEXT_PUBLIC_API as string;
+}
+
 const usePropertyDataStore = create<IPropertyDataStore>((set) => ({
   propertyData: [],
   propertyDetail: null,
   fetchPropertyData: async (id) => {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_API}/api/detail`, {
+    const res = await fetch(`${url}/api/detail`, {
       method: "GET",
     });
     const data = await res.json();
@@ -24,7 +31,7 @@ const usePropertyDataStore = create<IPropertyDataStore>((set) => ({
     }
   },
   fetchPropertyDetail: async (id) => {
-    await fetch(`${process.env.NEXT_PUBLIC_API}/api/detail/?id=${id}`, {
+    await fetch(`${url}/api/detail/?id=${id}`, {
       method: "GET",
     })
       .then((response) => response.json())

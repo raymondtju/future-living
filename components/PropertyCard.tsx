@@ -4,6 +4,7 @@ import { Floor, Room } from "./Icons";
 import Link from "next/link";
 import usePropertyDataStore from "@/hooks/usePropertyData";
 import { useRouter } from "next/router";
+import clsx from "clsx";
 
 interface IPropertyCard {
   propertyData: Record<string, any>[];
@@ -35,7 +36,16 @@ const PropertyCard = ({ propertyData }: IPropertyCard) => {
                 boxShadow: "1px 1px 12px 0px rgba(80,52,228,0.12)",
               }}
             >
-              <div className="h-[193px] w-full overflow-hidden rounded-t-14xl md:h-[255px]">
+              <div
+                className={clsx(
+                  "relative h-[193px] w-full overflow-hidden rounded-t-14xl md:h-[255px]"
+                )}
+              >
+                <div className="absolute inset-0 z-10 h-full w-full transition-all duration-300 hover:flex hover:bg-black/70">
+                  <span className="flex w-full items-center justify-center text-transparent hover:inset-0 hover:rounded-19xl hover:text-White-20 ">
+                    See Details
+                  </span>
+                </div>
                 <img
                   src={data.image}
                   alt={data.title}

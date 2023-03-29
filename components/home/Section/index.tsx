@@ -17,7 +17,7 @@ function Section() {
         <div className="mt-20 md:mt-32">
           <OurPropertySection />
         </div>
-        <div className="mt-20 md:mt-32">
+        <div className="mt-20 md:mt-32" id="about">
           <WhoWeAreSection />
         </div>
       </Layout>
@@ -25,7 +25,7 @@ function Section() {
         <WhyChooseUsSection />
       </div>
       <Layout>
-        <div className="mt-20 md:mt-32">
+        <div className="mt-20 md:mt-32" id="contact">
           <ContactSection />
         </div>
       </Layout>

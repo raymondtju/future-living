@@ -4,6 +4,8 @@ import React, { ReactNode } from "react";
 interface IButton {
   primary?: boolean;
   children?: ReactNode;
+  onClick?: () => void;
+  className?: string;
 }
 
 const Button = ({ primary, children, ...props }: IButton) => {
@@ -18,6 +20,7 @@ const Button = ({ primary, children, ...props }: IButton) => {
           "md:px-8 md:py-3",
           "big:py-4 big:px-10 big:text-5xl"
         )}
+        {...props}
       >
         {children}
       </button>

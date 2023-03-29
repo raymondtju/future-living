@@ -22,7 +22,10 @@ const heroInfo = [
 function Hero() {
   return (
     <>
-      <div className="relative pt-20 overflow-hidden md:pt-20 md:pb-20">
+      <div
+        className="relative overflow-hidden pt-20 md:pt-20 md:pb-20"
+        id="home"
+      >
         <div
           style={{
             background: `rgba(64, 165, 221, 0.3)`,
@@ -41,13 +44,13 @@ function Hero() {
 
         <Layout>
           <div className="w-auto md:w-6/12">
-            <h1 className="font-bold text-center text-11xl text-Primary-100 md:text-left md:text-17xl">
+            <h1 className="text-center text-11xl font-bold text-Primary-100 md:text-left md:text-17xl">
               Future Urban Living Expert
             </h1>
-            <h2 className="mt-4 text-5xl font-semibold text-center text-Primary-100 md:text-left md:text-12xl">
+            <h2 className="mt-4 text-center text-5xl font-semibold text-Primary-100 md:text-left md:text-12xl">
               The most comfortable home for the future life
             </h2>
-            <div className="hidden mt-12 md:flex">
+            <div className="mt-12 hidden md:flex">
               <div className="flex gap-3">
                 {heroInfo.map((info, index) => (
                   <div className="flex flex-col p-3" key={index}>
@@ -70,7 +73,7 @@ function Hero() {
         />
       </div>
       <Layout>
-        <div className="flex mt-8 md:hidden">
+        <div className="mt-8 flex md:hidden">
           <div className="flex gap-4">
             {heroInfo.map((info, index) => (
               <div className="flex flex-col p-1 text-center" key={index}>
