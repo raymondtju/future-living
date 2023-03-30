@@ -26,7 +26,7 @@ const PropertyCard = ({ propertyData }: IPropertyCard) => {
   }, [fetchPropertyData, router.pathname, router.query]);
 
   return (
-    <div className="flex justify-center">
+    <div className="mx-auto flex justify-center">
       <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
         {propertyData.map((data, index) => (
           <Link key={index} href={`/detail/${data.id}`}>

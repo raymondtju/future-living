@@ -12,9 +12,10 @@ import SectionTitle from "../SectionTitle";
 import SectionBody from "../SectionBody";
 import PropertyCard from "../PropertyCard";
 import usePropertyDataStore from "@/hooks/usePropertyData";
+import { Building, CCTV, Forest, Gate, Mushola } from "../Icons";
 
 interface IFacilityCard {
-  icon?: string;
+  icon?: any;
   label: string;
   desc: string;
 }
@@ -23,13 +24,13 @@ const FacilityCard = ({ icon, label, desc }: IFacilityCard) => {
     <div
       className={clsx(
         "flex w-full flex-col items-center rounded-14xl bg-White-20",
-        "py-2"
+        "py-7"
       )}
       style={{
         boxShadow: "1px 1px 12px 0px rgba(80,52,228,0.12)",
       }}
     >
-      {icon}
+      <span className="w-7 text-Primary-100 md:w-10 big:w-20">{icon}</span>
       <p
         className={clsx(
           "font-medium text-Primary-100",
@@ -118,13 +119,26 @@ const Detail = () => {
           <SectionTitle>Facility</SectionTitle>
           <SectionBody>
             <div className={clsx("grid", "grid-cols-2 gap-4")}>
-              <FacilityCard label="Mosque" desc="24 Meters" />
-              <FacilityCard label="CCTV" desc="24 Hours" />
-              <FacilityCard label="Playground" desc="20 Meters" />
-              <FacilityCard label="One Gate System" desc="24 Hours" />
+              <FacilityCard
+                label="Mosque"
+                desc="24 Meters"
+                icon={<Mushola />}
+              />
+              <FacilityCard label="CCTV" desc="24 Hours" icon={<Forest />} />
+              <FacilityCard
+                label="Playground"
+                desc="20 Meters"
+                icon={<CCTV />}
+              />
+              <FacilityCard
+                label="One Gate System"
+                desc="24 Hours"
+                icon={<Gate />}
+              />
               <FacilityCard
                 label="Public Fasilities"
                 desc="Mall, Hospital & Others"
+                icon={<Building />}
               />
             </div>
           </SectionBody>
