@@ -18,6 +18,7 @@ Future Living build with an updated tech 🤘
 - 🍃 Tailwind CSS + Headless UI
 - 🍕 Zustand - State Management
 - 🎈 API - NextJS experimental API
+- ☁️ Cloudinary - Stroring image for better performance
 
 ## Getting Started
 
