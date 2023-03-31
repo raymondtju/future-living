@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-img-element */
 import React from "react";
 import Image from "next/image";
 import clsx from "clsx";
@@ -13,58 +12,35 @@ import SectionBody from "../SectionBody";
 import PropertyCard from "../PropertyCard";
 import usePropertyDataStore from "@/hooks/usePropertyData";
 import { Building, CCTV, Forest, Gate, Mushola } from "../Icons";
-
-interface IFacilityCard {
-  icon?: any;
-  label: string;
-  desc: string;
-}
-const FacilityCard = ({ icon, label, desc }: IFacilityCard) => {
-  return (
-    <div
-      className={clsx(
-        "flex w-full flex-col items-center rounded-14xl bg-White-20",
-        "py-7"
-      )}
-      style={{
-        boxShadow: "1px 1px 12px 0px rgba(80,52,228,0.12)",
-      }}
-    >
-      <span className="w-7 text-Primary-100 md:w-10 big:w-20">{icon}</span>
-      <p
-        className={clsx(
-          "font-medium text-Primary-100",
-          "text-xs",
-          "md:text-4xl",
-          "big:text-7xl"
-        )}
-      >
-        {label}
-      </p>
-      <span
-        className={clsx(
-          "pt-2 text-Secondary-80",
-          "text-[12px]",
-          "md:text-xl",
-          "big:text-5xl"
-        )}
-      >
-        {desc}
-      </span>
-    </div>
-  );
-};
+import { DetailVRTour } from "./DetailVRTour";
+import { FacilityCard } from "./FacilityCard";
+import buildUrl from "cloudinary-build-url";
+import { DetailPhoto } from "./DetailPhoto";
 
 const Detail = () => {
   const propertyDetail = usePropertyDataStore((state) => state.propertyDetail);
   const propertyData = usePropertyDataStore((state) => state.propertyData);
+  const cloudinary = (name: string) => {
+    return buildUrl(`future-living/${name}`, {
+      cloud: {
+        cloudName: "dstfzlnsw",
+      },
+      transformations: {
+        resize: {
+          type: "limit",
+        },
+      },
+    });
+  };
   return (
     <>
       <div className={clsx("h-[184px]", "md:h-[351px]", "big:h-[658px]")}>
-        <img
-          src={propertyDetail?.image}
+        <Image
+          src={cloudinary(propertyDetail?.image)}
           alt="foto"
           className="h-full w-full object-cover"
+          width={1000}
+          height={1000}
         />
       </div>
       <Layout>
@@ -146,10 +122,13 @@ const Detail = () => {
 
         <div className="mt-20">
           <SectionTitle>Detail Photo</SectionTitle>
+          <SectionBody>
+            <DetailPhoto />
+          </SectionBody>
         </div>
 
-        <div className="mt-[60px]">
-          <SectionTitle>VR Tour</SectionTitle>
+        <div className="pt-[60px]" id="vr-tour">
+          <DetailVRTour />
         </div>
 
         <div className="mt-20">
