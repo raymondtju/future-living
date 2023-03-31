@@ -1,14 +1,8 @@
 import Head from "next/head";
-import { Poppins } from "next/font/google";
 import Layout from "@/components/Layout";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/home/Hero";
 import Section from "@/components/home/Section";
-
-const poppins = Poppins({
-  weight: ["400", "500", "600", "700"],
-  subsets: ["latin"],
-});
 
 export default function Home() {
   return (
@@ -19,7 +13,7 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className={`${poppins.className}`}>
+      <main>
         <Layout>
           <Navbar />
         </Layout>
