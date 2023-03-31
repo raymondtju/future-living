@@ -115,6 +115,9 @@ module.exports = {
         "19xl": "1.25rem",
         "20xl": "2rem",
       },
+      fontFamily: {
+        poppins: ["Poppins-Variable", "sans-serif"],
+      },
     },
   },
   plugins: [require("prettier-plugin-tailwindcss")],

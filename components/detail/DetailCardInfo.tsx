@@ -2,12 +2,9 @@ import React, { useState } from "react";
 import clsx from "clsx";
 import Label from "../Label";
 import Button from "../Button";
-import { Poppins } from "next/font/google";
-const poppins = Poppins({
-  weight: ["400", "500", "600", "700"],
-  subsets: ["latin"],
-});
+
 import { Dialog } from "@headlessui/react";
+import Link from "next/link";
 
 export function DetailCardInfo({ propertyDetail }: any) {
   const [modalContact, setModalContact] = useState(false);
@@ -20,7 +17,7 @@ export function DetailCardInfo({ propertyDetail }: any) {
       >
         <div className="fixed inset-0 bg-black/30" aria-hidden="true" />
         <Dialog.Panel
-          className={`${poppins.className} relative mx-auto flex w-full flex-col rounded-11xl bg-white px-10 py-6 md:w-8/12`}
+          className={`relative mx-auto flex w-full flex-col rounded-11xl bg-white px-10 py-6 font-poppins md:w-8/12`}
         >
           <div
             className="inline-flex justify-end"
@@ -113,7 +110,9 @@ export function DetailCardInfo({ propertyDetail }: any) {
             <Button primary={true} onClick={() => setModalContact(true)}>
               Call Agent
             </Button>
-            <Button>Lets Tour</Button>
+            <Link href="#vr-tour" scroll={false}>
+              <Button>Lets Tour</Button>
+            </Link>
           </div>
         </div>
       </div>

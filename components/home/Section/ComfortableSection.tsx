@@ -1,24 +1,25 @@
 import SectionBody from "@/components/SectionBody";
 import SectionTitle from "@/components/SectionTitle";
+import { cloudinary } from "@/libs/cloudinary";
+import Image from "next/image";
 
-/* eslint-disable @next/next/no-img-element */
 const ComfortableData = [
   {
     title: "Convenience Store",
     subtitle: "Convenience store make it easy for you to buy your daily needs",
-    image: "/assets/images/image 27.png",
+    image: "comfortable1",
   },
   {
     title: "Strategic Location",
     subtitle:
       "Our location is highly strategic, close to highways and downtown",
-    image: "/assets/images/image 26.png",
+    image: "comfortable2",
   },
   {
     title: "Hospital",
     subtitle:
       "Hospital with high technology that provides international services",
-    image: "/assets/images/image 22.png",
+    image: "comfortable3",
   },
 ];
 
@@ -33,10 +34,12 @@ export function ComfortableSection() {
               className="flex w-full max-w-[389px] flex-col justify-center text-center"
               key={index}
             >
-              <img
-                src={data.image}
+              <Image
+                src={cloudinary(data.image)}
                 alt={data.title}
                 className="mx-auto flex w-auto rounded-14xl object-cover"
+                width={1000}
+                height={1000}
               />
               <p className="text-black-100 pt-3 text-lg font-medium md:pt-5 md:text-7xl">
                 {data.title}

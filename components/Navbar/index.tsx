@@ -31,12 +31,10 @@ function Navbar() {
               href="#home"
               onClick={() => {
                 setToogle(!toogle);
-                document.getElementById("home")?.scrollIntoView({
-                  behavior: "smooth",
-                });
               }}
+              scroll={false}
             >
-              <li className="rounded-11xl px-2 py-2 transition-all duration-200 ease-in-out hover:bg-Primary-100 hover:text-white">
+              <li className="rounded-11xl px-3 py-2 transition-all duration-200 ease-in-out hover:bg-Primary-100 hover:text-white">
                 Home
               </li>
             </Link>
@@ -44,17 +42,19 @@ function Navbar() {
               href="#about"
               onClick={() => {
                 setToogle(!toogle);
-                document.getElementById("about")?.scrollIntoView({
-                  behavior: "smooth",
-                });
               }}
+              scroll={false}
             >
-              <li className="rounded-11xl px-2 py-2 transition-all duration-200 ease-in-out hover:bg-Primary-100 hover:text-white">
+              <li className="rounded-11xl px-3 py-2 transition-all duration-200 ease-in-out hover:bg-Primary-100 hover:text-white">
                 About
               </li>
             </Link>
-            <Link href="#contact" onClick={() => setToogle(!toogle)}>
-              <li className="rounded-11xl px-2 py-2 transition-all duration-200 ease-in-out hover:bg-Primary-100 hover:text-white">
+            <Link
+              href="#contact"
+              onClick={() => setToogle(!toogle)}
+              scroll={false}
+            >
+              <li className="rounded-11xl px-3 py-2 transition-all duration-200 ease-in-out hover:bg-Primary-100 hover:text-white">
                 Contact
               </li>
             </Link>

@@ -2,6 +2,7 @@ import React from "react";
 import Layout from "../Layout";
 import { Facebook, Instagram, WaveLine, Youtube } from "../Icons";
 import clsx from "clsx";
+import { cloudinary } from "@/libs/cloudinary";
 
 function Footer() {
   return (
@@ -11,7 +12,7 @@ function Footer() {
         <div
           className="absolute inset-0"
           style={{
-            background: `url("/assets/images/footer-bg.png")`,
+            backgroundImage: `url(${cloudinary("footer_bg")})`,
             backgroundSize: "cover",
             backgroundPosition: "center",
             zIndex: -11,
