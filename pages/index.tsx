@@ -14,6 +14,11 @@ export default function Home() {
           content="The most comfortable home for future life"
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="og:title" content="Future Living" />
+        <meta
+          name="og:description"
+          content="The most comfortable home for future life"
+        />
         <meta
           property="og:image"
           content="https://res.cloudinary.com/dstfzlnsw/image/upload/v1680240592/future-living/cover-image_xnkrox.png"
