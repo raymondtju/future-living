@@ -7,6 +7,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      screens: {
+        big: "1440px",
+      },
       colors: {
         Primary: {
           20: "#ece8fc",
@@ -111,6 +114,9 @@ module.exports = {
         "18xl": "1.142160415649414rem",
         "19xl": "1.25rem",
         "20xl": "2rem",
+      },
+      fontFamily: {
+        poppins: ["Poppins-Variable", "sans-serif"],
       },
     },
   },

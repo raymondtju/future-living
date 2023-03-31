@@ -1,43 +1,47 @@
-/* eslint-disable @next/next/no-img-element */
+import SectionBody from "@/components/SectionBody";
+import SectionTitle from "@/components/SectionTitle";
+import { cloudinary } from "@/libs/cloudinary";
+import Image from "next/image";
+
 const ComfortableData = [
   {
     title: "Convenience Store",
     subtitle: "Convenience store make it easy for you to buy your daily needs",
-    image: "/assets/images/image 27.png",
+    image: "comfortable1",
   },
   {
     title: "Strategic Location",
     subtitle:
       "Our location is highly strategic, close to highways and downtown",
-    image: "/assets/images/image 26.png",
+    image: "comfortable2",
   },
   {
     title: "Hospital",
     subtitle:
       "Hospital with high technology that provides international services",
-    image: "/assets/images/image 22.png",
+    image: "comfortable3",
   },
 ];
 
 export function ComfortableSection() {
   return (
     <>
-      <h2 className="font-semibold text-center section-title text-Secondary-100">
-        Comfortable with simplicity
-      </h2>
-      <div className="mt-10 flex justify-center md:mt-[60px]">
-        <div className="grid items-start grid-cols-1 gap-7 md:grid-cols-2 md:gap-4 lg:grid-cols-3">
+      <SectionTitle>Comfortable with simplicity</SectionTitle>
+      <SectionBody>
+        <div className="grid grid-cols-1 items-start gap-7 md:grid-cols-2 md:gap-4 lg:grid-cols-3">
           {ComfortableData.map((data, index) => (
             <div
               className="flex w-full max-w-[389px] flex-col justify-center text-center"
               key={index}
             >
-              <img
-                src={data.image}
+              <Image
+                src={cloudinary(data.image)}
                 alt={data.title}
-                className="flex object-cover w-auto mx-auto rounded-14xl"
+                className="mx-auto flex w-auto rounded-14xl object-cover"
+                width={1000}
+                height={1000}
               />
-              <p className="pt-3 text-lg font-medium text-black-100 md:pt-5 md:text-7xl">
+              <p className="text-black-100 pt-3 text-lg font-medium md:pt-5 md:text-7xl">
                 {data.title}
               </p>
               <p className="pt-2 text-[12px] text-Black-60 md:text-2xl">
@@ -46,7 +50,7 @@ export function ComfortableSection() {
             </div>
           ))}
         </div>
-      </div>
+      </SectionBody>
     </>
   );
 }

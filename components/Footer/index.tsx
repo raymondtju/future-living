@@ -1,6 +1,8 @@
 import React from "react";
 import Layout from "../Layout";
 import { Facebook, Instagram, WaveLine, Youtube } from "../Icons";
+import clsx from "clsx";
+import { cloudinary } from "@/libs/cloudinary";
 
 function Footer() {
   return (
@@ -10,7 +12,7 @@ function Footer() {
         <div
           className="absolute inset-0"
           style={{
-            background: `url("/assets/images/footer-bg.png")`,
+            backgroundImage: `url(${cloudinary("footer_bg")})`,
             backgroundSize: "cover",
             backgroundPosition: "center",
             zIndex: -11,
@@ -66,7 +68,13 @@ function Footer() {
                 </div>
               </div>
             </div>
-            <p className="mt-[120px] text-center text-2xl font-semibold text-White-20">
+            <p
+              className={clsx(
+                "text-center font-semibold text-White-20",
+                "mt-20 text-sm",
+                "big:mt-[120px] big:text-2xl"
+              )}
+            >
               Copyright Future Living 2023
             </p>
           </div>

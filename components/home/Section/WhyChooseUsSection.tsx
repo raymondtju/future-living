@@ -1,6 +1,7 @@
 import React from "react";
 import Layout from "@/components/Layout";
 import { Award, Time, Trend } from "@/components/Icons";
+import { cloudinary } from "@/libs/cloudinary";
 
 function WhyChooseUsSection() {
   return (
@@ -8,7 +9,9 @@ function WhyChooseUsSection() {
       <div
         className="relative bg-no-repeat py-10 md:py-[120px]"
         style={{
-          background: `linear-gradient(0deg, rgba(0, 0, 0, 0.24), rgba(0, 0, 0, 0.24)), url("/assets/images/whychooseus-bg.jpg")`,
+          background: `linear-gradient(0deg, rgba(0, 0, 0, 0.24), rgba(0, 0, 0, 0.24)), url(${cloudinary(
+            "why_choose_us"
+          )})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
