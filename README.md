@@ -19,6 +19,7 @@ Future Living build with an updated tech 🤘
 - 🍕 Zustand - State Management
 - 🎈 API - NextJS experimental API
 - ☁️ Cloudinary - Stroring image for better performance
+- 📷 Matterport - Demo 360 degree camera of property view
 
 ## Getting Started
 
