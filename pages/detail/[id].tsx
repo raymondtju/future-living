@@ -1,5 +1,4 @@
 import Head from "next/head";
-import { Poppins, Underdog } from "next/font/google";
 import Layout from "@/components/Layout";
 import Navbar from "@/components/Navbar";
 import Detail from "@/components/detail";
@@ -7,11 +6,6 @@ import Footer from "@/components/Footer";
 import usePropertyDataStore from "@/hooks/usePropertyData";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
-
-const poppins = Poppins({
-  weight: ["400", "500", "600", "700"],
-  subsets: ["latin"],
-});
 
 export default function Subpage() {
   const router = useRouter();
@@ -37,7 +31,7 @@ export default function Subpage() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className={`${poppins.className}`}>
+      <main className="font-poppins">
         <Layout>
           <Navbar />
         </Layout>
