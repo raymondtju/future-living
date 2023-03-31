@@ -18,8 +18,8 @@ export default function Home() {
           property="og:image"
           content="https://res.cloudinary.com/dstfzlnsw/image/upload/v1680240592/future-living/cover-image_xnkrox.png"
         />
-        <meta property="og:image:width" content="300" />
-        <meta property="og:image:height" content="300" />
+        <meta property="og:image:width" content="1200" />
+        {/* <meta property="og:image:height" content="630" /> */}
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
