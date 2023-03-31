@@ -1,8 +1,7 @@
 import React from "react";
-
-import front from "/public/assets/images/unsplash_koH7IVuwRLw-removebg-preview 1.png";
 import Image from "next/image";
 import Layout from "../Layout";
+import { cloudinary } from "@/libs/cloudinary";
 
 const heroInfo = [
   {
@@ -68,8 +67,11 @@ function Hero() {
         </Layout>
         <Image
           className="bottom-0 -right-[10%] mt-8 flex w-full max-w-screen-md justify-center overflow-hidden bg-clip-content md:absolute md:mt-0"
-          src={front}
+          src={cloudinary("home_hero")}
+          width={1000}
+          height={1000}
           alt="front"
+          priority
         />
       </div>
       <Layout>

@@ -7,11 +7,6 @@ import clsx from "clsx";
 import SectionTitle from "@/components/SectionTitle";
 import { Dialog } from "@headlessui/react";
 import Button from "@/components/Button";
-import { Poppins } from "next/font/google";
-const poppins = Poppins({
-  weight: ["400", "500", "600", "700"],
-  subsets: ["latin"],
-});
 
 function ContactSection() {
   const [modalEmail, setModalEmail] = useState(false);
@@ -25,7 +20,7 @@ function ContactSection() {
       >
         <div className="fixed inset-0 bg-black/30" aria-hidden="true" />
         <Dialog.Panel
-          className={`${poppins.className} relative mx-auto w-full rounded-11xl bg-white px-10 py-6 md:w-8/12`}
+          className={`relative mx-auto w-full rounded-11xl bg-white px-10 py-6 font-poppins md:w-8/12`}
         >
           <Dialog.Title>
             To: <span>service@gmail.com</span>
@@ -49,7 +44,7 @@ function ContactSection() {
       >
         <div className="fixed inset-0 bg-black/30" aria-hidden="true" />
         <Dialog.Panel
-          className={`${poppins.className} relative mx-auto flex w-full flex-col rounded-11xl bg-white px-10 py-6 md:w-8/12`}
+          className={`relative mx-auto flex w-full flex-col rounded-11xl bg-white px-10 py-6 font-poppins md:w-8/12`}
         >
           <div
             className="inline-flex justify-end"
