@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-img-element */
 import React, { useEffect } from "react";
 import { Floor, Room } from "./Icons";
 import Link from "next/link";
@@ -10,14 +9,15 @@ interface IPropertyCard {
   propertyData: Record<string, any>[];
 }
 
+import Image from "next/image";
+import { cloudinary } from "@/libs/cloudinary";
+
 const PropertyCard = ({ propertyData }: IPropertyCard) => {
   const router = useRouter();
   const fetchPropertyData = usePropertyDataStore(
     (state) => state.fetchPropertyData
   );
   useEffect(() => {
-    // console.log(router.pathname == "/");
-    // console.log(router.query.id);
     const { id } = router.query;
     const singleId = Array.isArray(id) ? id.join("") : id;
 
@@ -27,11 +27,11 @@ const PropertyCard = ({ propertyData }: IPropertyCard) => {
 
   return (
     <div className="mx-auto flex justify-center">
-      <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+      <div className="grid auto-cols-auto grid-cols-1 gap-4 md:grid-cols-2 big:grid-cols-3">
         {propertyData.map((data, index) => (
           <Link key={index} href={`/detail/${data.id}`}>
             <div
-              className="max-w-[389px] overflow-hidden rounded-14xl bg-White-20"
+              className="h-full max-w-[389px] overflow-hidden rounded-14xl bg-White-20"
               style={{
                 boxShadow: "1px 1px 12px 0px rgba(80,52,228,0.12)",
               }}
@@ -46,10 +46,12 @@ const PropertyCard = ({ propertyData }: IPropertyCard) => {
                     See Details
                   </span>
                 </div>
-                <img
-                  src={data.image}
+                <Image
+                  src={cloudinary(data.image)}
                   alt={data.title}
                   className="h-full w-full object-cover"
+                  width={400}
+                  height={100}
                 />
               </div>
               <div className="flex flex-col p-5">
